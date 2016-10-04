@@ -1,6 +1,6 @@
-<!-- [![Build Status](https://travis-ci.org/C404/distance-matrix-api.svg?branch=master)](https://travis-ci.org/C404/distance-matrix-api)
-[![Hex.pm](https://img.shields.io/hexpm/v/distance_api_matrix.svg)](https://hex.pm/packages/distance_api_matrix)
-[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT) -->
+[![Build Status](https://travis-ci.org/C404/sift_ex.svg?branch=master)](https://travis-ci.org/C404/sift_ex)
+[![Hex.pm](https://img.shields.io/hexpm/v/sift_ex.svg)](https://hex.pm/packages/sift_ex)
+[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 # Siftscience API Library for Elixir
 This library (based on the official [SiftScience](https://github.com/SiftScience) libraries) allows you to interact with the SiftScience API via various functions in Elixir.
 
