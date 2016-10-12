@@ -20,7 +20,7 @@ defmodule SiftEx.Mixfile do
 
   defp description do
     """
-    Google Distance Matrix API Library for Elixir
+    SiftScience API Library for Elixir
     """
   end
 
