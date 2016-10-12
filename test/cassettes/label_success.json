@@ -1,0 +1,25 @@
+[
+  {
+    "request": {
+      "body": "{\"$type\":\"$label\",\"$source\":\"Manual Review\",\"$is_bad\":true,\"$description\":\"Chargeback issued\",\"$api_key\":\"CREDENTIALS\",\"$analyst\":\"analyst.name@your_domain.com\",\"$abuse_type\":\"payment_abuse\"}",
+      "headers": [],
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.siftscience.com/v204/users/666069/labels?abuse_types="
+    },
+    "response": {
+      "body": "{ \"time\" : 1476283340 , \"status\" : 0 , \"request\" : \"{\\\"$type\\\":\\\"$label\\\",\\\"$source\\\":\\\"Manual Review\\\",\\\"$is_bad\\\":true,\\\"$description\\\":\\\"Chargeback issued\\\",\\\"$api_key\\\":\\\"CREDENTIALS\\\"}\" , \"error_message\" : \"OK\"}\n",
+      "headers": {
+        "Content-Type": "application/json; charset=UTF-8",
+        "Date": "Wed, 12 Oct 2016 14:42:20 GMT",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "Content-Length": "302",
+        "Connection": "keep-alive"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

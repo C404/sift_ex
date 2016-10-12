@@ -21,13 +21,13 @@ and run `$ mix deps.get`.
 **Set your Sift API key**
 
 One way `sift_api_key=YOUR_API_KEY iex -S mix`<br />
-Or the other `System.put_env("sift_api_key", YOUR_API_KEY)`
+Or the other `Application.put_env(:sift_ex, :api_key, YOUR_API_KEY)`
+
 
 **Set your Account ID (optional)**
 
 One way `sift_account_id=YOUR_API_KEY iex -S mix`<br />
-Or the other `System.put_env("sift_account_id", YOUR_ACCOUNT_ID)`
-
+Or the other `Application.put_env(:sift_ex, :account_id, YOUR_ACCOUNT_ID)`
 
 
 ```iex

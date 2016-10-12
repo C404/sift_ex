@@ -1,0 +1,25 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.siftscience.com/v204/score/666069/?abuse_types=&api_key=CREDENTIALS"
+    },
+    "response": {
+      "body": "{ \"status\" : 0 , \"error_message\" : \"OK\" , \"scores\" : { \"payment_abuse\" : { \"score\" : 0.8516078048934499 , \"reasons\" : [ { \"name\" : \"Normalized email address\" , \"value\" : \"buyer@gmail.com\" , \"details\" : { \"users\" : \"23069\"}} , { \"name\" : \"Successful transactions in the last week\" , \"value\" : \"5\"} , { \"name\" : \"Digit-Normalized email address\" , \"value\" : \"buyer@gmail.com\" , \"details\" : { \"users\" : \"23069\"}} , { \"name\" : \"Transaction payment type\" , \"value\" : \"$credit_card\" , \"details\" : { \"users\" : \"2304,573,1679,23069\"}} , { \"name\" : \"Age of first transaction\" , \"value\" : \"7.01 days\"} , { \"name\" : \"Email domain\" , \"value\" : \"gmail.com\" , \"details\" : { \"users\" : \"546,23069,560,2476,582\"}} , { \"name\" : \"Time since previous event\" , \"value\" : \"1.17 hours\"} , { \"name\" : \"Time since previous transaction\" , \"value\" : \"1.17 hours\"} , { \"name\" : \"Transaction billing last 4\" , \"value\" : \"4444\" , \"details\" : { \"users\" : \"573,23069\"}} , { \"name\" : \"Number of users with similar email address\" , \"value\" : \"2\" , \"details\" : { \"users\" : \"23069\"}} , { \"name\" : \"Number of users with the same email address\" , \"value\" : \"2\" , \"details\" : { \"users\" : \"23069\"}} , { \"name\" : \"Credit card BIN\" , \"value\" : \"542486\" , \"details\" : { \"users\" : \"23069\"}} , { \"name\" : \"Purchase amount in USD\" , \"value\" : \"15.23 USD\"} , { \"name\" : \"Successful transactions in the last day\" , \"value\" : \"5\"}]}} , \"user_id\" : \"666069\" , \"latest_labels\" : { \"payment_abuse\" : { \"is_bad\" : true , \"time\" : 1476283340 , \"description\" : \"Chargeback issued\"}} , \"actions\" : [ ]}\n",
+      "headers": {
+        "Content-Type": "application/json; charset=UTF-8",
+        "Date": "Wed, 12 Oct 2016 14:43:39 GMT",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "Content-Length": "1546",
+        "Connection": "keep-alive"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

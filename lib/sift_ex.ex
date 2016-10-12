@@ -3,8 +3,10 @@ defmodule SiftEx do
   @api3_url "https://api3.siftscience.com"
   @api_version "v204"
 
+  alias SiftEx.PathBuilder, as: PathBuilder
+
   def start do
-    if is_nil(sift_api_key), do: raise SiftEx.Error
+    if is_nil(sift_api_key) && Mix.env == :prod, do: raise SiftEx.Error
 
     HTTPoison.start
   end
@@ -43,7 +45,7 @@ defmodule SiftEx do
         you are subscribed.
   """
   def track(event, properties, abuse_types \\ []) when is_binary(event) and is_map(properties) do
-    url = @api_url <> SiftEx.PathRetriever.rest_api_path(@api_version)
+    url = @api_url <> PathBuilder.rest_api_path(@api_version)
 
     {:ok, %HTTPoison.Response{body: body}} = post_properties(url, event, properties, abuse_types)
 
@@ -69,7 +71,7 @@ defmodule SiftEx do
        you are subscribed.
   """
   def score(user_id, abuse_types \\ []) when is_binary(user_id) do
-    url = @api_url <> SiftEx.PathRetriever.score_api_path(user_id, @api_version)
+    url = @api_url <> PathBuilder.score_api_path(user_id, @api_version)
 
     {:ok, %HTTPoison.Response{body: body}} = HTTPoison.get(url, [], params: query_params(abuse_types))
 
@@ -103,7 +105,7 @@ defmodule SiftEx do
         }
   """
   def label(user_id, properties) when is_binary(user_id) do
-    url = @api_url <> SiftEx.PathRetriever.users_label_api_path(user_id, @api_version)
+    url = @api_url <> PathBuilder.users_label_api_path(user_id, @api_version)
 
     {:ok, %HTTPoison.Response{body: body}} = post_properties(url, "$label", properties)
 
@@ -123,7 +125,7 @@ defmodule SiftEx do
        event calls.
   """
   def unlabel(user_id) when is_binary(user_id) do
-    url = @api_url <> SiftEx.PathRetriever.users_label_api_path(user_id, @api_version)
+    url = @api_url <> PathBuilder.users_label_api_path(user_id, @api_version)
 
     {:ok, %HTTPoison.Response{status_code: 204}} = HTTPoison.delete(url, [], params: query_params)
 
@@ -142,7 +144,7 @@ defmodule SiftEx do
        event calls.
   """
   def get_workflow_status(run_id) when is_binary(run_id) do
-    url = @api3_url <> SiftEx.PathRetriever.workflow_status_path(account_id, run_id)
+    url = @api3_url <> PathBuilder.workflow_status_path(account_id, run_id)
 
     {:ok, %HTTPoison.Response{body: body}} = HTTPoison.get(url, [], params: query_params)
 
@@ -162,7 +164,7 @@ defmodule SiftEx do
        event calls.
   """
   def get_user_decisions(user_id) when is_binary(user_id) do
-    url = @api3_url <> SiftEx.PathRetriever.user_decisions_api_path(account_id, user_id)
+    url = @api3_url <> PathBuilder.user_decisions_api_path(account_id, user_id)
 
     {:ok, %HTTPoison.Response{body: body}} = HTTPoison.get(url, [], params: query_params)
 
@@ -182,7 +184,7 @@ defmodule SiftEx do
        event calls.
   """
   def get_order_decisions(order_id) when is_binary(order_id) do
-    url = @api3_url <> SiftEx.PathRetriever.order_decisions_api_path(account_id, order_id)
+    url = @api3_url <> PathBuilder.order_decisions_api_path(account_id, order_id)
 
     {:ok, %HTTPoison.Response{body: body}} = HTTPoison.get(url, [], params: query_params)
 
@@ -203,10 +205,10 @@ defmodule SiftEx do
 
 
   defp account_id do
-    System.get_env("sift_account_id")
+    Application.get_env(:sift_ex, :account_id)
   end
 
   defp sift_api_key do
-    System.get_env("sift_api_key")
+    Application.get_env(:sift_ex, :api_key)
   end
 end

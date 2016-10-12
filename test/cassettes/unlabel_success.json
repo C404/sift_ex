@@ -1,0 +1,22 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "delete",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.siftscience.com/v204/users/666069/labels?abuse_types=&api_key=CREDENTIALS"
+    },
+    "response": {
+      "body": "",
+      "headers": {
+        "Date": "Wed, 12 Oct 2016 14:43:53 GMT",
+        "Server": "nginx",
+        "Connection": "keep-alive"
+      },
+      "status_code": 204,
+      "type": "ok"
+    }
+  }
+]

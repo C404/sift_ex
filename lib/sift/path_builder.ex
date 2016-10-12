@@ -1,4 +1,4 @@
-defmodule SiftEx.PathRetriever do
+defmodule SiftEx.PathBuilder do
 
   # Returns the path for the specified API version
   def rest_api_path(version) do
