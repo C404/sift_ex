@@ -27,7 +27,8 @@ defmodule SiftEx.Mixfile do
   defp deps do
     [{:httpoison, "~> 0.9.0"},
     {:poison, "~> 1.5 or ~> 2.0"},
-    {:exvcr, "~> 0.6", only: :test}]
+    {:exvcr, "~> 0.6", only: :test},
+    {:ex_doc, ">= 0.0.0", only: :dev}]
   end
 
   defp package do
