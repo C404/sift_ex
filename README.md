@@ -93,7 +93,7 @@ Check out the official documentation [here](https://siftscience.com/developers/d
 
 ## Testing
 
-Various tests included, just run;
+Various tests included, just run:
 
     mix deps.get
     mix test
